@@ -1,0 +1,115 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\graphicspath{{imgs/}}
+
+\title{Разработка когнитивных способов представления спектральных данных атомных систем на основе интерактивной компьютерной графики}
+\author{Тихонова А. А. \\
+        Научный руководитель: Казаков В. В.}
+\institute{Новосибирский Государственный Университет}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  %\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  %  \usebeamerfont{author in head/foot}Каня Кирилл, НГУ
+  %\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
+    \usebeamerfont{title in head/foot} a.tikhonova@g.nsu.ru
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Cпектральные данные атомных систем}
+    Использование спектральных данных:
+    \begin{itemize}
+        \item исследования астрофизики
+        \item исследование продуктов сгорания
+        \item в области управляемого термоядерного синтеза
+    \end{itemize}
+    Способы представления:
+    \begin{itemize}
+        \item табличный
+        \item графический (схема энергетических уровней и переходов)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Эволюция графического представления спектральных данных}
+    \begin{itemize}
+        \item Спектрограммы
+        \item Графическое изображение стационарных состояний по Н. Бору\\\begin{center} {$\Downarrow$} \end{center}
+        \item Схема термов и переходов по Д. С. Рождественскому\\\begin{center} {$\Downarrow$} \end{center}
+        \item Диаграммы Гротриана, В. Гротриан (1924г.)\\\begin{center} {$\Downarrow$} \end{center}
+        \item Поиск новых графических представлений (исследование сложных спектров редкоземельных и трансурановых элементов)
+        \item ИС по атомной спектроскопии, позволяющие на основе БД строить графические представления атомных систем (ASD NIST и ИС "ЭСА"(ИАиЭ))
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Цели и задачи}
+    Цель: разработка новых способов графического представления электронной структуры атомных систем.
+     \\~\\
+    Задачи:
+    \begin{itemize}
+        \item Анализ существующих графических представлений и выявление их недостатков
+        \item Разработка оригинального графического инстумента для анализа атомных спектров
+        \item Добавения возможности взаимодействия пользователя с диаграммой
+        \item Анализ особенностей представления спектральных данных на новой диаграмме
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Недостатки классических графических представлений атомных спектров}
+    Спектрограммы: представлены только переходы без энергетических уровней
+     \\~\\
+    Диаграммы Гротриана: потеря читаемости при больших Z – большое число уровней и пересечений спектральных линий
+\end{frame}
+
+\begin{frame}
+\frametitle{Квантограмма - оригинальная диаграмма спектральных данных}
+    /основные идеи построения квантограммы/
+\end{frame}
+
+\begin{frame}
+\frametitle{Реализация}
+    /архитектура(клиентская и серверная часть), библиотеки/
+\end{frame}
+
+\begin{frame}
+\frametitle{Интерактивность квантограмм}
+    /Здесь об инструметах работы с квантограммой/
+\end{frame}
+
+\begin{frame}
+\frametitle{Диаграмма уровней}
+    /Не знаю где именно про нее расказывать. Есть идея рассказать о ней после того, как расскажу что я добавила отображение ширины конфигураций на диаграмму, а т.к. они пересекались, то пришла идея создать новую диаграмму только по уровням./
+\end{frame}
+
+\begin{frame}
+\frametitle{Результаты }
+    /Про особенности отображения спектральных данных на квантограмме/
+\end{frame}
+
+\begin{frame}
+\frametitle{Итоги }
+  
+\end{frame}
+
+\end{document}
