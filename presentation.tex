@@ -125,30 +125,65 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Реализация}{Вид квантограммы}
-\begin{columns}
-    \begin{column}{0.4\textwidth}
-         часть спектра Mn \\*на квантограмме
+\begin{frame}
+\frametitle{Интерактивность квантограмм}
+    \begin{itemize}
+       
+      
+        \item Режим раскрашивания переходов по принадлежности к мультиплетам
+        
+        \item + отображение ширины конфигурации, кофигурация с атомными остатками, с термами
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Интерактивность квантограмм}{Масштабирование и всплывающие подсказки}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+         Масштабирование
+         \includegraphics[width=\textwidth]{zoom.png}
     \end{column}
     \begin{column}{0.5\textwidth}
-      \includegraphics[width=\textwidth]{example.JPG}
+      Tooltip
+      \includegraphics[width=\textwidth]{tooltip.png}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Интерактивность квантограмм}
+\begin{frame}{Интерактивность квантограмм}{Режимы отображения данных}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
     \begin{itemize}
-        \item Масштабирование
-        \item Всплывающие подсказки при наведении на переход 
-        \item Изменение единиц измерения энергии
-        \item Изменение режима отображения переходов (изменение осей)
-        \item Отображения интенсивности перехода прозрачностью
-        \item Отображение всех компонент мультиплета в отдельном окне квантограммы при выборе одной из компонент
-        \item Режим раскрашивания переходов по принадлежности к мультиплетам
-        \item Фильтрация переходов по длине волны
-        \item + отображение ширины конфигурации
+        \item X: E$_{lower}$, Y: E$_{upper}$
+        \item  X: E$_{lower}$, Y: E$_{upper}$ - E$_{lower}$
     \end{itemize}
+         \includegraphics[width=\textwidth]{mode1.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Для четного терма - \\*X: E$_{lower}$, Y: E$_{upper}$
+        \\*для нечетного - наоборот
+    \end{itemize}
+      \includegraphics[width=\textwidth]{mode2.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Интерактивность квантограмм}{Другие функции}
+   \begin{columns}
+    \begin{column}{0.27\textwidth}
+        \begin{block}{}
+             \begin{itemize}
+                \item Интенсивность перехода - прозрачность
+                \item Фильтрация переходов по длине волны
+                \item см$^{-1}$, эВ
+                \item Отображение компонент мультиплета в отдельном окне
+            \end{itemize}
+        \end{block}
+    \end{column}
+    \begin{column}{0.73\textwidth}
+    \includegraphics[width=\textwidth]{other.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
