@@ -3,7 +3,7 @@
 \usepackage[english,russian]{babel}
 \usetheme{Madrid}
 \usepackage{graphicx}
-\graphicspath{{imgs/}}
+\graphicspath{{images/}}
 
 \title{Разработка когнитивных способов представления спектральных данных атомных систем на основе интерактивной компьютерной графики}
 \author{Тихонова А. А. \\
@@ -15,9 +15,6 @@
 {
   \leavevmode%
   \hbox{%
-  %\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-  %  \usebeamerfont{author in head/foot}Каня Кирилл, НГУ
-  %\end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
     \usebeamerfont{title in head/foot} a.tikhonova@g.nsu.ru
   \end{beamercolorbox}%
@@ -39,8 +36,8 @@
 \frametitle{Cпектральные данные атомных систем}
     Использование спектральных данных:
     \begin{itemize}
-        \item исследования астрофизики
         \item исследование продуктов сгорания
+        \item исследования астрофизики
         \item в области управляемого термоядерного синтеза
     \end{itemize}
     Способы представления:
@@ -54,12 +51,23 @@
 \frametitle{Эволюция графического представления спектральных данных}
     \begin{itemize}
         \item Спектрограммы
-        \item Графическое изображение стационарных состояний по Н. Бору\\\begin{center} {$\Downarrow$} \end{center}
-        \item Схема термов и переходов по Д. С. Рождественскому\\\begin{center} {$\Downarrow$} \end{center}
-        \item Диаграммы Гротриана, В. Гротриан (1924г.)\\\begin{center} {$\Downarrow$} \end{center}
+        \item Графическое изображение стационарных состояний по Н. Бору (1923г.)
+        \item Схема термов и переходов по Д. С. Рождественскому (1921г.)
+        \item Диаграммы Гротриана, В. Гротриан (1924г.)
         \item Поиск новых графических представлений (исследование сложных спектров редкоземельных и трансурановых элементов)
         \item ИС по атомной спектроскопии, позволяющие на основе БД строить графические представления атомных систем (ASD NIST и ИС "ЭСА"(ИАиЭ))
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Эволюция графического представления спектральных данных}{Графическое изображение стационарных состояний по Н. Бору}
+    \includegraphics[width=\textwidth]{bhor.png}
+    \begin{block}{}
+         2 квантовых числа: n, k
+         \\*Точка - стационарное состояние
+         \\*Длина перпендикуляра из точки на вертикальную ось  $\propto$ энергии
+    \end{block}
+     
+  
 \end{frame}
 
 \begin{frame}
@@ -70,7 +78,7 @@
     \begin{itemize}
         \item Анализ существующих графических представлений и выявление их недостатков
         \item Разработка оригинального графического инстумента для анализа атомных спектров
-        \item Добавения возможности взаимодействия пользователя с диаграммой
+        \item Добавения возможностей взаимодействия пользователя с диаграммой
         \item Анализ особенностей представления спектральных данных на новой диаграмме
     \end{itemize}
 \end{frame}
@@ -85,41 +93,61 @@
 \begin{frame}
 \frametitle{Квантограмма - оригинальная диаграмма спектральных данных}
     Основная идея: переходы отображаются точками на плоскости, координаты которых - значения энергии верхнего и нижнего уровней перехода.
-    \begin{itemize}
+    \\~\\
+     \begin{itemize}
         \item Автоматическая генерация квантограмм на основе БД для всех элементов периодической таблицы и их ионов
         \item Отображение мультиплетности, интенсивности и длины волны перехода
+        \item Информация об уровнях
     \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Реализация}
     \begin{itemize}
-        \item Интерактивное web-приложение (Rich Internet Application)
         \item Трехуровневая клиент-серверная архитектура (MS SQL + Apache и php скрипты + WEB браузер)
+        \item Интерактивное web-приложение (Rich Internet Application)
+        \item Web-интерфейс: JavaScript, HTML, CSS, SVG
         \item Библиотеки: Chart.js, JQuery
-        \item Web-интерфейс:JavaScript, HTML, CSS, SVG
     \end{itemize}
-    Вид квантограммы:
+    \begin{columns}
+    \begin{column}{0.7\textwidth}
+       Вид квантограммы:
     \begin{itemize}
-        \item 2D-диаграмма
+        \item 2D - диаграмма
         \item Переход - точка на графике, отображаемая символом
         \item Символ перехода соответствует мультиплетности, 
-       \\~цвет - длине волны
+        \\~цвет - длине волны
     \end{itemize}
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \includegraphics[width=\textwidth]{mult.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Реализация}{Вид квантограммы}
+\begin{columns}
+    \begin{column}{0.4\textwidth}
+         часть спектра Mn \\*на квантограмме
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{example.JPG}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Интерактивность квантограмм}
     \begin{itemize}
         \item Масштабирование
-        \item Изменение единиц измерения энергии
-        \item Режим отображения интенсивности перехода прозрачностью
         \item Всплывающие подсказки при наведении на переход 
+        \item Изменение единиц измерения энергии
         \item Изменение режима отображения переходов (изменение осей)
+        \item Отображения интенсивности перехода прозрачностью
         \item Отображение всех компонент мультиплета в отдельном окне квантограммы при выборе одной из компонент
         \item Режим раскрашивания переходов по принадлежности к мультиплетам
         \item Фильтрация переходов по длине волны
-        \item Отображение ширины конфигурации?????
+        \item + отображение ширины конфигурации
     \end{itemize}
 \end{frame}
 
